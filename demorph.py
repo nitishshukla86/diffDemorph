@@ -41,7 +41,7 @@ def postprocess(tensor):
 # Load pipeline
 # -----------------------------
 pipeline = DDPMPipeline.from_pretrained(
-    '/research/iprobe-shuklan3/SDeMorph++/smdd-image-no-condition/299'
+    './pretrained/diffDemorph'
 ).to('cuda')
 
 # -----------------------------
