@@ -5,7 +5,6 @@
 
 
 ## Abstract
-
 A face morph is created by combining two face images corresponding to two identities  to produce a composite that successfully matches both the constituent identities. Reference-free (RF) demorphing reverses this process using only the morph image, without the need for additional reference images. Previous RF demorphing methods are overly constrained, as they rely on assumptions about the distributions of training and testing morphs such as the morphing technique used (e.g., landmark-based) and face image style (e.g., passport photos). In this paper, we introduce a novel diffusion-based approach, referred to as diffDeMorph,  that effectively disentangles component images from a composite  morph image with high visual fidelity. Our method is the first to generalize across morph techniques and face styles, beating the current state of the art by ≥59.46% under a common training protocol across all datasets tested. We train our method on morphs created using synthetically generated face images and test on real morphs, thereby enhancing the practicality of the technique. Experiments on six datasets and two face matchers establish the utility and efficacy of our method.  
 
 ## Methodology
@@ -20,13 +19,10 @@ A face morph is created by combining two face images corresponding to two identi
   <p>Denoising</p>
   <img src="assets/icip2025.png" width="600">
 </div>
-
 </div>
+*(Top): Coupled forward diffusion: We modify the standard diffusion process for coupled generation. Noise is added to the coupled image until it  is degenerated into pure noise.*
 
-*(Top): Coupled forward diffusion: We modify the standard diffusion process for coupled generation. Noise is added to the coupled image until it  is degenerated into pure noise.
-
-(Bottom): Architecture of our morph guided denoiser. During inference, the morph is appended to the noisy output sample at timestep=t, providing the guidance for generation of the outputs. This process is repeated until demorphed at timestep=0 are recovered.
-*
+*(Bottom): Architecture of our morph guided denoiser. During inference, the morph is appended to the noisy output sample at timestep=t, providing the guidance for generation of the outputs. This process is repeated until demorphed at timestep=0 are recovered.*
 
 ### Contribution
 
