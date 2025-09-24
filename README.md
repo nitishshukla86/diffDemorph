@@ -21,7 +21,7 @@ A face morph is created by combining two face images corresponding to two identi
 </div>
 </div>
 
-*Figure 1:(Top): Coupled forward diffusion: We modify the standard diffusion process for coupled generation. Noise is added to the coupled image until it  is degenerated into pure noise. (Bottom): Architecture of our morph guided denoiser. During inference, the morph is appended to the noisy output sample at timestep=t, providing the guidance for generation of the outputs. This process is repeated until demorphed at timestep=0 are recovered.*
+*Figure 1:(Top): Coupled forward diffusion: We modify the standard diffusion process for coupled generation. Noise is added to the coupled image until it  is degenerated into pure noise. (Bottom): Architecture of our morph guided denoiser. During inference, the morph is appended to the noisy output sample at timestep=t, providing the guidance for generation of the outputs. This process is repeated until demorphed images at timestep=0 are recovered.*
 
 ### Contribution
 
@@ -45,7 +45,7 @@ The proposed method was evaluated on several benchmark morph datasets, demonstra
 
 
 
-*Table 1: Comparison of our baseline (same train and test dataset) with the current state-of-the-art demorphing methods in terms of TMR at 10\% FMR, when both the train and test morphs originate from the same dataset, i.e., using a consistent morph technique. *
+*Table 1: Comparison of our baseline (same train and test dataset) with the current state-of-the-art demorphing methods in terms of TMR at 10\% FMR, when both the train and test morphs originate from the same dataset, i.e., using a consistent morph technique.*
 
 ![results](assets/icip2025-res.png)
 
@@ -86,7 +86,7 @@ python demorph.py --img_path ./assets/morph.png --save_path ./assets/ --num_step
 ```
 @INPROCEEDINGS{shukla2025diffdemorph,
   author={Shukla, Nitish and Ross, Arun},
-  booktitle={}, 
+  booktitle={IEEE International Conference on Image Processing (ICIP, 2025)}, 
   title={diffDemorph: Extending Reference-Free Demorphing to Unseen Faces}, 
 }
 
