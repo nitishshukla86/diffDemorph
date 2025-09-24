@@ -13,12 +13,12 @@ A face morph is created by combining two face images corresponding to two identi
 
 <div style="text-align: center;">
   <p>Forward Coupled Diffusion</p>
-  <img src="assets/icip-2025-forward.png" width="300">
+  <img src="assets/icip-2025-forward.png" width="900">
 </div>
 
 <div style="text-align: center;">
-  <p>DEMORPHED OUTPUTS</p>
-  <img src="assets/icip2025.png" width="145">
+  <p>Denoising</p>
+  <img src="assets/icip2025.png" width="600">
 </div>
 
 </div>
@@ -101,4 +101,3 @@ This work is licensed under a [CC BY 4.0](https://creativecommons.org/licenses/b
 ---
 
 For more details, please refer to the full paper: [arXiv:2507.18566](https://arxiv.org/pdf/2411.14494?).
-
