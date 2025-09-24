@@ -20,9 +20,8 @@ A face morph is created by combining two face images corresponding to two identi
   <img src="assets/icip2025.png" width="600">
 </div>
 </div>
-*(Top): Coupled forward diffusion: We modify the standard diffusion process for coupled generation. Noise is added to the coupled image until it  is degenerated into pure noise.*
 
-*(Bottom): Architecture of our morph guided denoiser. During inference, the morph is appended to the noisy output sample at timestep=t, providing the guidance for generation of the outputs. This process is repeated until demorphed at timestep=0 are recovered.*
+*Figure 1:(Top): Coupled forward diffusion: We modify the standard diffusion process for coupled generation. Noise is added to the coupled image until it  is degenerated into pure noise. (Bottom): Architecture of our morph guided denoiser. During inference, the morph is appended to the noisy output sample at timestep=t, providing the guidance for generation of the outputs. This process is repeated until demorphed at timestep=0 are recovered.*
 
 ### Contribution
 
