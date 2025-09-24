@@ -1,4 +1,4 @@
-#diffDeMorph: Extending Reference-Free Demorphing to Unseen Faces
+# diffDeMorph: Extending Reference-Free Demorphing to Unseen Faces
 
 **Authors:** Nitish Shukla, Arun Ross  
 **Venue:**  IEEE International Conference on Image Processing (ICIP, 2025)
@@ -51,6 +51,7 @@ The proposed method was evaluated on several benchmark morph datasets, demonstra
 
 
 *Table 1: Comparison of our baseline (same train and test dataset) with the current state-of-the-art demorphing methods in terms of TMR at 10\% FMR, when both the train and test morphs originate from the same dataset, i.e., using a consistent morph technique. *
+
 ![results](assets/icip2025-res.png)
 
 
