@@ -75,12 +75,24 @@ local_dir = snapshot_download(
 
 3. **Demorph**
 ```bash
-python demorph.py --img_path ./assets/morph.png --save_path ./assets/ --num_steps 10
+python demorph.py --img_path ./assets/morph.png --save_path ./assets/out.png --num_steps 10
 ```
 - `--morph_path`: Path to the morph image.
 - `--output_dir`: Directory where demorphed images will be saved.
 
-
+4. **Training**
+```bash
+python train_ddpm.py \
+    --image_size 256 \
+    --latent_size 256 \
+    --dataset_csv_path <path to morph csv> \
+    --train_batch_size 16 \
+    --eval_batch_size 4 \
+    --num_epochs 300 \
+    --save_image_epochs 10 \
+    --save_model_epochs 50 \
+    --output_dir "smdd-image-no-condition" \
+```
 ## Citation
 
 ```

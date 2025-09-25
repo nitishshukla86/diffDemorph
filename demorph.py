@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import cv2
 import argparse
 from pipeline import DDPMPipeline
+from utils import get_transforms
 
 # -----------------------------
 # Argument parsing
@@ -12,26 +13,25 @@ parser = argparse.ArgumentParser(description="Demorph a face using DDPMPipeline"
 parser.add_argument("--img_path", type=str, required=True, help="Path to the input morphed image")
 parser.add_argument("--save_path", type=str, required=True, help="Path to save the output image")
 parser.add_argument("--num_steps", type=int, default=10, help="Number of diffusion steps")
+parser.add_argument("--img_size", type=int, default=256, help="Size of generated images")
 args = parser.parse_args()
 
 # -----------------------------
 # Config & transforms
 # -----------------------------
-IMAGE_SIZE = 256
 SEED = 0
 
-transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Resize((IMAGE_SIZE, IMAGE_SIZE), antialias=False),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-])
 
-invTrans = transforms.Compose([
-    transforms.Normalize(mean=[0., 0., 0.], std=[1/0.229, 1/0.224, 1/0.225]),
-    transforms.Normalize(mean=[-0.485, -0.456, -0.406], std=[1., 1., 1.]),
-    transforms.ToPILImage()
-])
+#download the model
+from huggingface_hub import snapshot_download
+local_dir = snapshot_download(
+    repo_id="nitishshukla/pretrained-weights",
+    allow_patterns=["diffDemorph/*"],
+    local_dir="./pretrained"
+)
 
+
+transform,invTrans=get_transforms(image_size=args.img_size)
 def postprocess(tensor):
     tensor = tensor.clamp(-1, 1)
     # tensor = (tensor + 1) / 2  # scale to [0,1]
